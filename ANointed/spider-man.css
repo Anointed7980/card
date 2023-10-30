@@ -1,0 +1,132 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height:100vh;
+	background: linear-gradient(red, black);
+}
+
+.card {
+	position: relative;
+	width: 400px;
+	height: 600px;
+	background: white;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.27);
+}
+
+.card .poster::before {
+	content: '';
+	position: absolute;
+	bottom: -100px;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, #D80032, 70%, transparent);
+	transition: 0.5s;
+	z-index: 1;
+}
+.card:hover .poster::before {
+	bottom: 0px;
+}
+.card .poster img{
+ 	width: 100%;
+ 	transition: 0.5s;
+}
+
+.card:hover .poster img {
+ transform: translateY(-40px);
+ filter: blur(5px);
+}
+
+.card .details {
+	position: absolute;
+	left: 10px;
+	padding: 15px;
+	bottom: -160px;
+	width: 140%;
+	z-index: 2;
+	transition: 0.5s;
+}
+.card:hover .details {
+	bottom: 100px;
+}
+.card .details .logo {
+	max-width: 180px;
+
+}
+.card .details h3 {
+	font-size: 14px;
+	color: #fff;
+}
+
+.card .details .rating {
+	position: relative;
+	padding: 5px 0;
+}
+.card .details .rating .fa-star{
+	color: #F9F54B;
+	font-size: 1em;
+}
+
+.card .details .rating span {
+	color: #fff;
+}
+
+.card .details.tags {
+	position: relative;
+	margin-top: 5px;
+}
+
+.card .details .tags span {
+	padding: 2px 5px;
+	color: #fff;
+	font-size: 14px;
+	background: #FF0032;
+	border-radius: 5px;
+}
+
+.card .details .tags span:nth-child(2) {
+	background: #0078AA;
+}
+.card .details .info {
+	color: #fff;
+	font-size: 13px;
+	margin-top: 4px;
+}
+
+.card .details .cast {
+	position:  relative;
+}
+
+.card .details .cast h4 {
+	color: #fff;
+	margin-top: 10px;
+}
+
+.card .details .cast ul {
+	position: relative;
+	display: flex;
+	margin-top: 10px;
+	gap: 10px;
+}
+
+.card .details .cast ul li{
+	list-style: none;
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 3px solid #fff;
+}
+
+.card .details .cast ul li img{
+	 max-width: 100%;
+}
+
